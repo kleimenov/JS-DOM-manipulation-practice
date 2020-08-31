@@ -83,3 +83,12 @@ document.querySelector('#interestingII').innerText = 'Another interesting paragr
 //Try to change text color for fun
 document.getElementById('nice').style.color = 'magenta';
 
+
+//Let's play with code 
+let newsList = document.querySelectorAll('#news-list li');
+
+for (let i=0; i < newsList.length; i++) {
+    newsList[i].innerHTML += "smoked";
+}
+
+
