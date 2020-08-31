@@ -4,3 +4,25 @@
     height: 200px;
     border: 2px dotted red;
 }
+
+
+#newsLink {
+    color: black;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+#newsLink:hover {
+    font-weight: 800;
+    color: red;
+}
+
+.span-italic {
+    font-style: italic;
+}
+
+#newsLink:hover + .span-italic {
+    font-size: 28px;
+}

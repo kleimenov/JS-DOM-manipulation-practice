@@ -92,10 +92,17 @@ let newsList = document.querySelectorAll('#news-list li');
 
 //iterate over list and create new <span> element and add text into <span>
 for (let i=0; i < newsList.length; i++) {
-    let textNewsTag = document.createElement("span")
+    let textNewsTag = document.createElement("span");
     let textNewsHeaderText = document.createTextNode("Hot News");
+    textNewsTag.classList.add("span-italic");
     textNewsTag.appendChild(textNewsHeaderText);
     newsList[i].appendChild(textNewsTag).style.color = "red";
 
 }
 
+//Let's start listening events
+document.getElementById("surprise").addEventListener('click', sayMeow);
+
+function sayMeow() {
+    alert("Meow Meow Meow ")
+}
