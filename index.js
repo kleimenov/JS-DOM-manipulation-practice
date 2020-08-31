@@ -84,11 +84,18 @@ document.querySelector('#interestingII').innerText = 'Another interesting paragr
 document.getElementById('nice').style.color = 'magenta';
 
 
-//Let's play with code 
+/*Let's play with code (fun part)
+I will add <span> with text "Hot News" to each list element and set color red for this text
+*/
+//define new variable newsList.
 let newsList = document.querySelectorAll('#news-list li');
 
+//iterate over list and create new <span> element and add text into <span>
 for (let i=0; i < newsList.length; i++) {
-    newsList[i].innerHTML += "smoked";
-}
+    let textNewsTag = document.createElement("span")
+    let textNewsHeaderText = document.createTextNode("Hot News");
+    textNewsTag.appendChild(textNewsHeaderText);
+    newsList[i].appendChild(textNewsTag).style.color = "red";
 
+}
 
