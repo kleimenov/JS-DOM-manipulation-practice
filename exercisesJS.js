@@ -6,6 +6,8 @@ array, and sum the together
 
 let arr = [10, 4, 34, 6, 92, 2];
 
+//I will use insertion sort approach for sorting array and when array will be sorted,
+//I just add last two elemets to each other 
 const sumLargestNumbers = function(data) {
     for (let i = 0; i < data.length; i++) {
         let tmp = data[i]; 
