@@ -25,7 +25,7 @@ const sumLargestNumbers = function(data) {
 }
 
 
-
+//sort function (insertion sort algorithm)
 let sortFromGreaterToSmaller = function(data) {
     for (let i = 0; i < data.length; i++) {
         let tmp = data[i]; 
@@ -35,6 +35,20 @@ let sortFromGreaterToSmaller = function(data) {
             previousIndex -- ; 
         }
         data[previousIndex + 1] = tmp;
+    }
+    return data;
+}
+
+//sort function (bubble sort algorithm)
+let sortedArray = function(data) {
+    for(let i = 0; i < data.length; i++) {
+        for(let j = 0; j <data.length; j++) {
+            if(data[j] > data[j + 1]) {
+                let tmp = data[j];
+                data[j] = data[j + 1];
+                data[j + 1] = tmp;
+            }
+        }
     }
     return data;
 }
