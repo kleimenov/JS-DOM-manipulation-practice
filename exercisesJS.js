@@ -24,7 +24,7 @@ const sumLargestNumbers = function(data) {
 
 
 
-let sumLargestNumbers = function(data) {
+let sortFromGreaterToSmaller = function(data) {
     for (let i = 0; i < data.length; i++) {
         let tmp = data[i]; 
         let previousIndex = i - 1; 
