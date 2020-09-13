@@ -58,10 +58,10 @@ For this puzzle, we will be adding only the numbers in the array which match the
 */
 
 
-var conditonaSum = function(values, condition) {
-    var evenNumbers = [];
-    var oddNumbers = [];
-    for (var i = 0; i < values.length; i++) {
+const conditonaSum = function(values, condition) {
+    let evenNumbers = [];
+    let oddNumbers = [];
+    for (let i = 0; i < values.length; i++) {
       if(values[i] % 2 === 0) {
         evenNumbers.push(values[i]);
       }
@@ -78,6 +78,28 @@ var conditonaSum = function(values, condition) {
   }
   
   
-  var values = [1,2,3,4,5];
-  var condition = 'even';
+  let values = [1,2,3,4,5];
+  let condition = 'even';
+  console.log(conditonaSum(values, condition))
+
+
+  //or
+
+  const conditonaSum = function(values, condition) {
+    let evenNumbers = [];
+    let oddNumbers = [];
+    for (let i = 0; i < values.length; i++) {
+      values[i] % 2 === 0 ? evenNumbers.push(values[i]) : oddNumbers.push(values[i]);
+    }
+    if (condition === 'even') {
+      return evenNumbers.reduce(function(acc, val) { return acc + val; }, 0);
+    }
+    else {
+      return oddNumbers.reduce(function(acc, val) { return acc + val; }, 0);
+    }
+  }
+  
+  
+  let values = [1,2,3];
+  let condition = 'odd';
   console.log(conditonaSum(values, condition))
