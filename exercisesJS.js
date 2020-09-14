@@ -103,3 +103,16 @@ const conditonaSum = function(values, condition) {
   let values = [1,2,3];
   let condition = 'odd';
   console.log(conditonaSum(values, condition))
+
+  //or
+
+  const conditionalSum = function(values, condition) {
+    let sumEven = 0;
+    let sumOdd = 0;
+
+    for (let i = 0; i < values.length; i++) {
+      values[i] % 2 === 0 ? sumEven += values[i] : sumOdd += values[i];
+    }
+    if (condition === 'even') {return sumEven}
+    else {return sumOdd};
+  }
