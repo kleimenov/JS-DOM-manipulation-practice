@@ -210,3 +210,26 @@ let numberOfVowels = function(data){
   return cnt;
 }
 
+
+// or modified function with counter feature
+
+var newW = "aNKaaaaaWRTfsReeeeeeeeeeettTTTttuuuuuuu";
+
+ 
+var numberOfVowels = function(data){
+
+  var vawelDict = {"a": 0,"e": 0, "i": 0, "o": 0, "u": 0};
+  var dataMod = data.toLowerCase(data);
+  var cnt = 0;
+
+  for(var i = 0; i < dataMod.length; i++) {
+    //console.log(dataMod[i])
+    if(vawelDict.hasOwnProperty(dataMod[i])) {
+      vawelDict[dataMod[i]] += 1;
+      }
+  }
+  //return Object.values(vawelDict);
+   return vawelDict;
+}
+ 
+console.log(numberOfVowels(newW))
