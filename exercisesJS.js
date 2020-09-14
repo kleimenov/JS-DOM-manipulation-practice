@@ -269,7 +269,10 @@ console.log(instructorWithLongestName(arrTwo));
 
 /*
 Puzzle #5
-
+Create a function that will receive a string of words, 
+and return that string with all of the whitespace characters converted to %20.
+ If there is whitespace on the outside of the string, 
+ like in our second example above, you should only replace the whitespace within the string.
 */
 
 let textStrg = "   Cat hasn't avatar   ";
