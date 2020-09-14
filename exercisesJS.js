@@ -233,3 +233,25 @@ var numberOfVowels = function(data){
 }
  
 console.log(numberOfVowels(newW))
+
+/*
+Puzzle #4
+In this exercise, we will be given a list of instructors and have to determine which instructor has the longest name.
+*/
+
+var arrOne = [
+  {name: "Samuel", course: "iOS"},
+  {name: "Jeremaiah", course: "Web"},
+  {name: "Ophilia", course: "Web"},
+  {name: "Donald", course: "Web"}
+]
+
+var arrTwo = [
+  {name: "Mattew", course: "Web"},
+  {name: "David", course: "iOS"},
+  {name: "Domascus", course: "Web"}
+]
+
+const instructorWithLongestName = function(instructors) {
+
+}
