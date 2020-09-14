@@ -53,6 +53,46 @@ let sortedArray = function(data) {
     return data;
 }
 
+//sort fucntion (heap sort algorithm)
+
+var arrLength;
+function swap(input, indexA, indexB) {
+  var tmp = input[indexA];
+  input[indexA] = input[indexB];
+  input[indexB] = tmp;
+}
+
+function heapRoot(input, i) {
+  var left = 2*i + 1;
+  var right = 2*i + 2;
+  var max = i;
+
+  if(left < arrLength && input[left] > input[max]) {
+    max = left;
+  }
+  if (right < arrLength && input[right] > input[max]) {
+    max = right;
+  }
+  if (max != i) {
+    swap(input, i, max);
+    heapRoot(input, max);
+  }
+}
+
+function heapSort(input) {
+  arrLength = input.length;
+  for(var i = Math.floor(arrLength/2); i >= 0; i--) {
+    heapRoot(input, i);
+  }
+  for(i = input.length - 1; i > 0; i--) {
+    swap(input, 0, i);
+    arrLength--;
+
+    heapRoot(input, 0);
+  }
+}
+
+
 /* Puzzle #2
 For this puzzle, we will be adding only the numbers in the array which match the given condition
 */
