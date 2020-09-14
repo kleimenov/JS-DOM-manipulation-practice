@@ -92,7 +92,6 @@ function heapSort(input) {
   }
 }
 
-
 //sort fucntion (quick sort algorithm)
 
 function quickSort(origArray) {
@@ -155,7 +154,7 @@ const conditonaSum = function(values, condition) {
   console.log(conditonaSum(values, condition))
 
 
-  //or
+//or
 
   const conditonaSum = function(values, condition) {
     let evenNumbers = [];
@@ -176,7 +175,7 @@ const conditonaSum = function(values, condition) {
   let condition = 'odd';
   console.log(conditonaSum(values, condition))
 
-  //or
+//or
 
   const conditionalSum = function(values, condition) {
     let sumEven = 0;
@@ -188,3 +187,26 @@ const conditonaSum = function(values, condition) {
     if (condition === 'even') {return sumEven}
     else {return sumOdd};
   }
+
+
+/*
+Puzzle #3
+In this puzzle, we will be counting number of vowels that appear in a given string. For 
+this exercise, consider the following to be vowels: a. e. i, o and u.
+*/
+
+
+let numberOfVowels = function(data){
+
+  let vawelDict = {"a": 1,"e": 2, "i": 3, "o": 4, "u": 5};
+  let dataMod = data.toLowerCase(data);
+  let cnt = 0;
+
+  for(let i = 0; i < dataMod.length; i++) {
+    //console.log(dataMod[i])
+    if(vawelDict.hasOwnProperty(dataMod[i])) {
+      cnt++; }
+  }
+  return cnt;
+}
+
