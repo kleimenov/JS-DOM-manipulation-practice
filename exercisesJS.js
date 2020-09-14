@@ -265,4 +265,45 @@ const instructorWithLongestName = function(instructors) {
   return longestName;
 }
 
-console.log(instructorWithLongestName(arrTwo))
+console.log(instructorWithLongestName(arrTwo));
+
+/*
+Puzzle #5
+
+*/
+
+let textStrg = "   Cat hasn't avatar   ";
+
+
+const ultimateCleaner = function(text) {
+  let cnt = 0;
+  while(text[cnt] ===" ") {
+    text = text.slice(cnt+1, text.length);
+    cnt ++;
+  }
+  
+  function backsideCleaner(text) {
+    let cntBack = text.length-1;
+    while(text[cntBack] ===" "){
+      text = text.slice(0, cntBack);
+      cntBack--;
+    }
+    return text;
+  }
+  
+   function midTextCleaner(text) {
+    /*for(let i = 0; i < text.length-1; i++){
+      if(text[i] === " ") {
+        text[i] = "%20";
+      }
+    }*/
+    text = text.replaceAll(" ", "%20");
+    return text;
+  }
+  
+  let backCleaned = backsideCleaner(text);
+  return midTextCleaner(backCleaned);
+}
+
+
+console.log(ultimateCleaner(textStrg));
