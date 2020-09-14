@@ -310,3 +310,8 @@ const ultimateCleaner = function(text) {
 
 
 console.log(ultimateCleaner(textStrg));
+
+//pr
+const urlCleaner = function(text) {
+  return text.trim().replaceAll(" ", "%20")
+}
