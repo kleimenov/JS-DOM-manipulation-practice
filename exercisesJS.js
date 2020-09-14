@@ -253,5 +253,16 @@ var arrTwo = [
 ]
 
 const instructorWithLongestName = function(instructors) {
-
+  let maxValue = 0;
+  let tmp = 0;
+  let longestName = "";
+  for (var i=0; i< instructors.length; ++i) {
+    if(instructors[i].name.length > maxValue) {
+      maxValue = instructors[i].name.length;
+      longestName = instructors[i].name;
+      }
+    }
+  return longestName;
 }
+
+console.log(instructorWithLongestName(arrTwo))
