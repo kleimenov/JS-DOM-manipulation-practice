@@ -311,7 +311,63 @@ const ultimateCleaner = function(text) {
 
 console.log(ultimateCleaner(textStrg));
 
-//pr
+//or
 const urlCleaner = function(text) {
   return text.trim().replaceAll(" ", "%20")
 }
+
+
+/*
+Puzzle #6
+There are three kinds of possible vehicles: regular cars, small cars, and motorcycles.
+Regular cars can only park in R spots.
+Small cars can park in R or S spots.
+Motorcycles can park in R, S, or M spots.
+In the array of parking spots, spots are written in both lower-case and upper-case. 
+An upper-case letter means that the particular spot is AVAILABLE, while lower-case 
+letters mean that the spot is UNAVAILABLE. Our function must return an array with 
+the coordinates of the spot as an [X, Y] pair. See the example input and output below for an illustration.
+*/
+
+let array = 
+  [
+    // COLUMNS ARE X
+    // 0    1    2    3    4    5
+    ['s', 's', 's', 'S', 'R', 'M'], // 0 ROWS ARE Y
+    ['s', 'M', 's', 'S', 'r', 'M'], // 1
+    ['s', 'M', 's', 'S', 'r', 'm'], // 2
+    ['S', 'r', 's', 'm', 'r', 'M'], // 3
+    ['S', 'r', 's', 'm', 'r', 'M'], // 4
+    ['S', 'r', 'S', 'M', 'M', 'S']  // 5
+  ]
+
+let vehicle = "small";
+const whereCanIPark = function (spots, vehicle) {
+  
+  let letterIndex = vehicle.charAt(0).toUpperCase();
+  let coordinateArray = [];
+  let particularCarCoordinate = [];
+  
+  for (let y = 0; y < array.length; y++){
+    for (let x = 0; x < array[y].length; x++){
+      if(array[y][x] === "R" && (letterIndex === "M" || letterIndex === "S" || letterIndex === "R")) {
+        let particularCarCoordinate = [];
+        particularCarCoordinate.push(x, y);
+        coordinateArray.push(particularCarCoordinate);
+        }
+      if(array[y][x] === "S" && (letterIndex === "M" || letterIndex === "S")) {
+        let particularCarCoordinate = [];
+        particularCarCoordinate.push(x, y);
+        coordinateArray.push(particularCarCoordinate);
+        }
+      if(array[y][x] === "M" && letterIndex === "M") {
+        let particularCarCoordinate = [];
+        particularCarCoordinate.push(x, y);
+        coordinateArray.push(particularCarCoordinate);
+        }
+      }
+  }
+  return coordinateArray;
+}
+
+console.log(whereCanIPark(array, vehicle))
