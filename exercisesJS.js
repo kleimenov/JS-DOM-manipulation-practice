@@ -385,3 +385,21 @@ You've decided that you want to install air pollution sensors
 const checkAir = function (samples, threshold) {
   // Code here!
 };
+
+let arr = ['clean', 'clean', 'dirty', 'clean', 'dirty', 'clean', 'clean', 'dirty', 'clean', 'dirty'];
+let threshold = 0.3;
+
+const checkAir = function (samples, threshold) {
+  let cntClean = 0;
+  let airPollution = 0;
+
+  for(let i = 0; i < samples.length; i++) {
+    if(samples[i] === "clean") {
+      cntClean++;}
+  }
+  airPollution = (cntClean/samples.length).toPrecision(2);
+  return airPollution < threshold ? "Clean" : "Polluted";
+}
+
+console.log(checkAir(arr, threshold))
+
