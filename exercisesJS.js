@@ -352,7 +352,7 @@ const whatIsMySize = function (array, size) {
 Puzzle #7
 */
 
-
+*/
 
 let arr = ['clean', 'clean', 'dirty', 'clean', 'clean', 'dirty', 'clean', 'dirty'];
 let threshold = 0.3;
