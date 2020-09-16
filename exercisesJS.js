@@ -1,14 +1,11 @@
 /* Puzzle #1
-In this exercise, we will be given array of 2 or more numbers.
-We will then have to find the two largest numbers in that
-array, and sum the together
 */
 
 let arr = [10, 4, 34, 6, 92, 2];
 [4,10,6,34]
 //I will use insertion sort approach for sorting array and when array will be sorted,
 //I just add last two elemets to each other 
-const sumLargestNumbers = function(data) {
+const sumCounter = function(data) {
     for (let i = 0; i < data.length; i++) {
         let tmp = data[i];
         let previousIndex = i - 1; 
@@ -125,11 +122,10 @@ console.log(sortedArray);
 
 
 /* Puzzle #2
-For this puzzle, we will be adding only the numbers in the array which match the given condition
 */
 
 
-const conditonaSum = function(values, condition) {
+const countConditons = function(values, condition) {
     let evenNumbers = [];
     let oddNumbers = [];
     for (let i = 0; i < values.length; i++) {
@@ -151,12 +147,12 @@ const conditonaSum = function(values, condition) {
   
   let values = [1,2,3,4,5];
   let condition = 'even';
-  console.log(conditonaSum(values, condition))
+  console.log(countConditons(values, condition))
 
 
 //or
 
-  const conditonaSum = function(values, condition) {
+  const countConditons = function(values, condition) {
     let evenNumbers = [];
     let oddNumbers = [];
     for (let i = 0; i < values.length; i++) {
@@ -173,11 +169,11 @@ const conditonaSum = function(values, condition) {
   
   let values = [1,2,3];
   let condition = 'odd';
-  console.log(conditonaSum(values, condition))
+  console.log(countConditons(values, condition))
 
 //or
 
-  const conditionalSum = function(values, condition) {
+  const countConditons = function(values, condition) {
     let sumEven = 0;
     let sumOdd = 0;
 
@@ -191,12 +187,10 @@ const conditonaSum = function(values, condition) {
 
 /*
 Puzzle #3
-In this puzzle, we will be counting number of vowels that appear in a given string. For 
-this exercise, consider the following to be vowels: a. e. i, o and u.
 */
 
 
-let numberOfVowels = function(data){
+let vowelsCounter = function(data){
 
   let vawelDict = {"a": 1,"e": 2, "i": 3, "o": 4, "u": 5};
   let dataMod = data.toLowerCase(data);
@@ -216,7 +210,7 @@ let numberOfVowels = function(data){
 var newW = "aNKaaaaaWRTfsReeeeeeeeeeettTTTttuuuuuuu";
 
  
-var numberOfVowels = function(data){
+var vowelsCounter = function(data){
 
   var vawelDict = {"a": 0,"e": 0, "i": 0, "o": 0, "u": 0};
   var dataMod = data.toLowerCase(data);
@@ -232,47 +226,37 @@ var numberOfVowels = function(data){
    return vawelDict;
 }
  
-console.log(numberOfVowels(newW))
+console.log(vowelsCounter(newW))
 
 /*
 Puzzle #4
-In this exercise, we will be given a list of instructors and have to determine which instructor has the longest name.
 */
 
 var arrOne = [
-  {name: "Samuel", course: "iOS"},
-  {name: "Jeremaiah", course: "Web"},
-  {name: "Ophilia", course: "Web"},
-  {name: "Donald", course: "Web"}
+  {word: "Moon"},
+  {word: "Plate"},
+  {word: "Cat"},
+  {word: "Notwithstanding"}
 ]
 
-var arrTwo = [
-  {name: "Mattew", course: "Web"},
-  {name: "David", course: "iOS"},
-  {name: "Domascus", course: "Web"}
-]
 
-const instructorWithLongestName = function(instructors) {
+
+const wordsLengthRadar = function(arr) {
   let maxValue = 0;
   let tmp = 0;
   let longestName = "";
-  for (var i=0; i< instructors.length; ++i) {
-    if(instructors[i].name.length > maxValue) {
-      maxValue = instructors[i].name.length;
-      longestName = instructors[i].name;
+  for (var i=0; i< arr.length; ++i) {
+    if(arr[i].word.length > maxValue) {
+      maxValue = arr[i].word.length;
+      longestName = arr[i].word;
       }
     }
   return longestName;
 }
 
-console.log(instructorWithLongestName(arrTwo));
 
 /*
 Puzzle #5
-Create a function that will receive a string of words, 
-and return that string with all of the whitespace characters converted to %20.
- If there is whitespace on the outside of the string, 
- like in our second example above, you should only replace the whitespace within the string.
 */
 
 let textStrg = "   Cat hasn't avatar   ";
@@ -319,14 +303,6 @@ const urlCleaner = function(text) {
 
 /*
 Puzzle #6
-There are three kinds of possible vehicles: regular cars, small cars, and motorcycles.
-Regular cars can only park in R spots.
-Small cars can park in R or S spots.
-Motorcycles can park in R, S, or M spots.
-In the array of parking spots, spots are written in both lower-case and upper-case. 
-An upper-case letter means that the particular spot is AVAILABLE, while lower-case 
-letters mean that the spot is UNAVAILABLE. Our function must return an array with 
-the coordinates of the spot as an [X, Y] pair. See the example input and output below for an illustration.
 */
 
 let array = 
@@ -341,52 +317,44 @@ let array =
     ['S', 'r', 'S', 'M', 'M', 'S']  // 5
   ]
 
-let vehicle = "small";
-const whereCanIPark = function (spots, vehicle) {
+let size = "small";
+const whatIsMySize = function (array, size) {
   
-  let letterIndex = vehicle.charAt(0).toUpperCase();
+  let letterIndex = size.charAt(0).toUpperCase();
   let coordinateArray = [];
-  let particularCarCoordinate = [];
+  let particularCoordinate = [];
   
   for (let y = 0; y < array.length; y++){
     for (let x = 0; x < array[y].length; x++){
       if(array[y][x] === "R" && (letterIndex === "M" || letterIndex === "S" || letterIndex === "R")) {
-        let particularCarCoordinate = [];
-        particularCarCoordinate.push(x, y);
-        coordinateArray.push(particularCarCoordinate);
+        let particularCoordinate = [];
+        particularCoordinate.push(x, y);
+        coordinateArray.push(particularCoordinate);
         }
       if(array[y][x] === "S" && (letterIndex === "M" || letterIndex === "S")) {
-        let particularCarCoordinate = [];
-        particularCarCoordinate.push(x, y);
-        coordinateArray.push(particularCarCoordinate);
+        let particularCoordinate = [];
+        particularCoordinate.push(x, y);
+        coordinateArray.push(particularCoordinate);
         }
       if(array[y][x] === "M" && letterIndex === "M") {
-        let particularCarCoordinate = [];
-        particularCarCoordinate.push(x, y);
-        coordinateArray.push(particularCarCoordinate);
+        let particularCoordinate = [];
+        particularCoordinate.push(x, y);
+        coordinateArray.push(particularCoordinate);
         }
       }
   }
   return coordinateArray;
 }
 
-console.log(whereCanIPark(array, vehicle))
 
 
 /*
 Puzzle #7
-The new smart parking lot in Codeville was a big hit! 
-Next on your list to tackle is the air quality. 
-You've decided that you want to install air pollution sensors
- around the city to monitor air quality and identify problem areas. 
- We need to write the code for the sensors to trigger a special message when the air is too polluted.
 */
 
-const checkAir = function (samples, threshold) {
-  // Code here!
-};
 
-let arr = ['clean', 'clean', 'dirty', 'clean', 'dirty', 'clean', 'clean', 'dirty', 'clean', 'dirty'];
+
+let arr = ['clean', 'clean', 'dirty', 'clean', 'clean', 'dirty', 'clean', 'dirty'];
 let threshold = 0.3;
 
 const checkAir = function (samples, threshold) {
