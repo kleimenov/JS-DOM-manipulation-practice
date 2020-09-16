@@ -23,6 +23,44 @@ let charCounter = function(str){
     return result;
 }
 
-console.log(charCounter(stringNew))
+//console.log(charCounter(stringNew))
 
+//modified solution
+let charCounterMod = function(str) {
+    // create an object, we will add countered characters here and retern it as a result at the end
+    let result = {};
+    // define specific variable for counting cahracters
+    let cnt = 0;
+    // loop odver string 
+    while(cnt < str.length){
+        // make each character lowercase 
+        let char = str[cnt].toLowerCase();
+        // check condition with regular expression tools
+        if(/[a-z0-9]/.test(char)) {
+            // check statement if character is into object increase counter for one elae add character
+            result[char] > 0 ? result[char]++ : result[char] = 1;
+        }
+    //increase counter
+    cnt++;
+    }
+    // return object as a result
+    return result;
+}
+   
+console.log(charCounterMod("Hellouuuuu777"))
+//console.log(charCounterMod(stringNew)); 
 
+//modified solutionII
+
+let charCounterII = function(str) {
+    let result = {};
+    for(let char of str){
+        char = char.toLowerCase();
+        if(/[a-z0-9]/.test(char)) {
+            result[char] = ++result[char] || 1;
+        }
+    }
+    return result;
+}
+
+console.log(charCounterII("HellooooFFF"));
