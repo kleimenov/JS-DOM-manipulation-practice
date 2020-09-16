@@ -369,5 +369,5 @@ const checkAir = function (samples, threshold) {
   return airPollution < threshold ? "Clean" : "Polluted";
 }
 
-console.log(checkAir(arr, threshold))
+
 
