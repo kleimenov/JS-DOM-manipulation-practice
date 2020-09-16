@@ -64,3 +64,29 @@ let charCounterII = function(str) {
 }
 
 console.log(charCounterII("HellooooFFF"));
+
+//modifide solutiounIII instead regular expression I will use custome function isAlphaNumeric, 
+//this function will check character 
+
+let charCounterIII = function(str){
+    let result = {};
+    for(let char of str){
+        if(isAlphaNumeric(char)){
+            char = char.toLowerCase();
+            result[char] = ++result[char] || 1;
+        }
+    }
+    return result;
+}
+
+function isAlphaNumeric(char){
+    let code = char.charCodeAt();
+    if(!(code > 47 && code < 58) && //numeric (0-9)
+       !(code > 64 && code < 91) && //upper alpha (A-Z)
+       !(code > 98 && code < 123)) { //lower alpha (a-z)
+           return false;
+       }
+    return true;
+}
+
+console.log(charCounterIII('helllOOOO 8888'));
