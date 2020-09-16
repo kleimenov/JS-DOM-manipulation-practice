@@ -368,6 +368,5 @@ const checkAir = function (samples, threshold) {
   airPollution = (cntClean/samples.length).toPrecision(2);
   return airPollution < threshold ? "Clean" : "Polluted";
 }
-
-
+console.log(checkAir(arr, threshold))
 
