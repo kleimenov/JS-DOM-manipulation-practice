@@ -369,3 +369,4 @@ const checkAir = function (samples, threshold) {
 }
 console.log(checkAir(arr, threshold))
 
+

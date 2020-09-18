@@ -90,3 +90,7 @@ function isAlphaNumeric(char){
 }
 
 console.log(charCounterIII('helllOOOO 8888'));
+
+
+
+ 
