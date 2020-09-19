@@ -1,3 +1,4 @@
+/*
 //Exercise #1
 //Write a function that will count each character in string and return object with result
 
@@ -90,7 +91,5 @@ function isAlphaNumeric(char){
 }
 
 console.log(charCounterIII('helllOOOO 8888'));
+*/
 
-
-
- 
