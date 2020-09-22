@@ -1,4 +1,5 @@
 //implement function that will return random value in range from 1 to 6 like a dice
+
 function randomIntGenerator(min, max){
     return Math.floor(Math.random() * (max - min) + min);
 }
@@ -14,5 +15,6 @@ const diceRoller = function(amountOfRolls){
     }
     return diceRollsResult.join(',');
 }
+
 
 console.log(diceRoller(3));
