@@ -6,3 +6,13 @@ array.forEach(function(innerArray){
         console.log(insideInnerArray);
     });
 })
+
+
+for (let numbers of array){
+    console.log(numbers);
+}
+
+
+for (let index in array) {
+    console.log(array[index]);
+}
