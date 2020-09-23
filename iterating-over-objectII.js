@@ -3,14 +3,20 @@ const person = {
   lastName: 'Glueman',
   weightInKg: 73,
   heightInCm: 173,
+  numbers: [2, 3, 98]
   };
   
-/*
-for (let values in person) {
-    console.log(values, person[values]);
-}
-*/
 
-console.log(Object.values(person));
-console.log(Object.keys(person));
-console.log(Object.keys(person), Object.values(person));
+for (let keyName in person) {
+    if (keyName === 'numbers') {
+      for (let numbers of person[keyName]) {
+        console.log(numbers)
+    }
+  }
+}
+
+
+
+//console.log(Object.values(person));
+//console.log(Object.keys(person));
+//console.log(Object.keys(person), Object.values(person));
