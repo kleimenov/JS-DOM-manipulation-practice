@@ -16,9 +16,11 @@ const person = {
 
 //we have an option how to iterete over object use C-style loop and we can get access 
 //try to get access to keys in object (loop through object)
+/*
 for (let values in person) {
     console.log(person[values]);
 }
+*/
 //try to get access to keys value pairs
 for (let values in person) {
      console.log(values, person[values]);
