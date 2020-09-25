@@ -15,3 +15,4 @@ const person = {
 
 person.fullName();
 person.heightInInches();
+
