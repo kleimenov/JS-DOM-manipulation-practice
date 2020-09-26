@@ -13,6 +13,9 @@ const person = {
     }
 };
 
-person.fullName();
-person.heightInInches();
+person.fullName();    
+
+person.heightInInches(); 
+
+// add 
 
