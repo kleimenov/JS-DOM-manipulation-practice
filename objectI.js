@@ -13,9 +13,26 @@ const person = {
     }
 };
 
-person.fullName();    
+//person.fullName();    
 
-person.heightInInches(); 
+//person.heightInInches(); 
 
-// add 
+//declare an object with the new  ES6
+let cat = 'Meow';
+let dog = 'Woff';
+let bird = 'Peet peet';
 
+let animalSounds = {
+  cat, 
+  dog,
+  bird,
+}
+
+
+let animalSoundsI = {
+  cat: cat,
+  dog: dog,
+  bird: bird,
+}
+
+console.log(animalSounds, animalSoundsI)
