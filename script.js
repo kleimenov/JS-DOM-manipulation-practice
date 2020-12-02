@@ -1,22 +1,22 @@
 
-var template = document.querySelector('#message-template').content;
+let template = document.querySelector('#message-template').content;
 
-var newMessageTemplate = template.querySelector('.chat-message')
+let newMessageTemplate = template.querySelector('.chat-message')
 
-var chatContainer = document.querySelector('.chat-content');
+let chatContainer = document.querySelector('.chat-content');
 
-var messages = chatContainer.children;
+let messages = chatContainer.children;
 
-var messageForm = document.querySelector('.chat-form');
+let messageForm = document.querySelector('.chat-form');
 
-var input = messageForm.querySelector('.chat-form-input');
+let input = messageForm.querySelector('.chat-form-input');
 
 
 messageForm.addEventListener('submit', function(evt){
   evt.preventDefault(evt);
-  var text = input.value;
+  let text = input.value;
   
-  var newTemplate = newMessageTemplate.cloneNode(true);
+  let newTemplate = newMessageTemplate.cloneNode(true);
   
   newTemplate.children[1].textContent = text;
   
@@ -29,15 +29,15 @@ messageForm.addEventListener('submit', function(evt){
 })
 
 
-var deleteMessageHandler = function (message) {
-  var crossSign = message.querySelector('.chat-message-button');
+let deleteMessageHandler = function (message) {
+  let crossSign = message.querySelector('.chat-message-button');
   crossSign.addEventListener('click', function () {
   message.remove(); 
   });    
 }
 
 
-for (var i = 0;i < messages.length;i++) {
+for (let i = 0;i < messages.length;i++) {
   deleteMessageHandler(messages[i]);  
 }
 
